@@ -1,4 +1,5 @@
 $(function () {
+
     // Filter
     let filter = $("[data-filter]");
     filter.on('click', function (event) {
@@ -19,29 +20,32 @@ $(function () {
             }
         });
     })
+
+
     // Modals 
-    let modal = $('[data-modal]');
+    let modalCall = $('[data-modal]');
     let modalClose = $('[data-close]');
 
-    modal.on("click", function (event) {
+    modalCall.on("click", function (event) {
         event.preventDefault();
         let $this = $(this);
         let modalId = $this.data("modal");
-        $(modalId).addClass('show');
+        $(".modal").hide();
+        $(modalId).show();
         $("body").addClass('no-scroll');
     })
-
 
     modalClose.on("click", function (event) {
         event.preventDefault();
         let $this = $(this);
         let modalParent = $this.parents(".modal");
-        modalParent.removeClass('show');
+        console.log(modalParent);
+        modalParent.hide();
         $("body").removeClass('no-scroll');
     })
 
     $(".modal").on("click", function (event) {
-        $(this).removeClass('show');
+        $(this).hide();
         $("body").removeClass('no-scroll');
     })
 
@@ -50,7 +54,9 @@ $(function () {
     })
 
 
-    // Slider: https://kenwheeler.github.io/slick/
+    // Slider: 
+    // https://kenwheeler.github.io/slick/
+
     $('[data-slider="slick"]').slick({
         infinite: true,
         slidesToShow: 1,
@@ -63,19 +69,40 @@ $(function () {
 
     $('.slickPrev').on('click', function (event) {
         event.preventDefault();
+        let currentSlider = $(this).parents('.modal');
+        let first = $('.modalWorks').find('.modal').first().attr('id');
 
-        let currentSlider = $(this).parents('.modal').find('[data-slider="slick"]');
-
-        currentSlider.slick('slickPrev');
+        currentSlider.hide();
+        currentSlider.prev().show();
+        if (first == currentSlider.attr('id')) {
+            $("body").removeClass('no-scroll')
+        };
     })
 
     $('.slickNext').on('click', function (event) {
         event.preventDefault();
+        let currentSlider = $(this).parents('.modal');
+        let last = $('.modalWorks').find('.modal').last().attr('id');
 
-        let currentSlider = $(this).parents('.modal').find('[data-slider="slick"]');
-
-        currentSlider.slick('slickNext');
+        currentSlider.hide();
+        currentSlider.next().show();
+        if (last == currentSlider.attr('id')) {
+            $("body").removeClass('no-scroll')
+        }
     })
 
+    // Scroll 
 
-})
+    $('[data-scroll]').on('click', function (event) {
+        event.preventDefault();
+
+        let elementId = $(this).data('scroll');
+        console.log(elementId)
+        let elementOffset = $(elementId).offset().top;
+
+        $('html, body').animate({
+            scrollTop: elementOffset
+        }, 700);
+    });
+
+});
