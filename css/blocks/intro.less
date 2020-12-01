@@ -3,21 +3,53 @@
 .intro__inner {
   display: flex;
   border-bottom: 1px solid rgba(@gray, .3);
-  padding-top: 100px;
-  padding-bottom: 120px;
+  padding-top: 6.6rem;
+  padding-bottom: 8rem;
   position: relative;
 
   background: url(../images/symbols.png) right bottom no-repeat;
+
+  @media @tablet {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-size: 400px auto;
+  }
+
+  @media @tablet-mini {
+    background-size: 300px auto;
+  }
+
+  @media (max-width: 568px) {
+    background-size: 215px auto;
+    padding-top: 2rem;
+  }
+
+  @media @mobile {
+    background-size: 250px auto;
+  }
 }
 
 .intro__content {
   width: 50%;
+
+  @media @mobile {
+   width: 100%;
+  }
+
+  @media @tablet-mini {
+    width: 100%;
+  }
+
 }
 
 .intro__subtitle {
   font-weight: 200;
   font-size: 2.13rem;
   color: @black;
+
+  @media @tablet {
+    font-size: 1.5rem;
+  }
 }
 
 .intro__title {
@@ -25,6 +57,11 @@
   color: @black;
   font-weight: 700;
   margin-bottom: 5px;
+
+  @media @tablet {
+    font-size: 2rem;
+  }
+
 }
 
 .intro__text {
@@ -38,4 +75,20 @@
   bottom: -1px;
   right: 0;
   z-index: 1;
+
+  @media @tablet {
+    width: 350px;
+  }
+
+  @media @tablet-mini {
+    width: 300px;
+  }
+
+  @media (max-width: 568px) {
+    width: 215px;
+  }
+
+  @media @mobile {
+    display: none;
+  }
 }

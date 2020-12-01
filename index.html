@@ -27,15 +27,19 @@
                         <div class="user__prof">UI & UX Designer</div>
                     </div>
                 </div>
-                <div class="nav">
-                    <nav id="nav">
-                        <a class='nav__link' href="#" data-scroll='#work'>work</a>
-                        <a class='nav__link' href="#" data-scroll='#about_me'>about me</a>
-                        <a class='nav__link' href="#" data-scroll='#blog'>blog</a>
-                        <a class='nav__link' href="#" data-scroll='#contacts'>contacts</a>
-                        <a class='nav__link nav__link--btn' href="#" data-modal="#modal__hire-me">hire me</a>
-                    </nav>
-                </div>
+
+                <nav class="nav" id="nav">
+                    <a class='nav__link' href="#" data-scroll='#work'>work</a>
+                    <a class='nav__link' href="#" data-scroll='#about_me'>about me</a>
+                    <a class='nav__link' href="#" data-scroll='#blog'>blog</a>
+                    <a class='nav__link' href="#" data-scroll='#contacts'>contacts</a>
+                    <a class='nav__link nav__link--btn' href="#" data-modal="#modal__hire-me">hire me</a>
+                </nav>
+
+
+                <button class="burger" type="button" id="navToggle"> <span class='burger__item'>
+                        Menu
+                    </span> </button>
             </div>
         </div>
     </header> <!-- /.header -->
@@ -87,7 +91,7 @@
             <div class="portfolio">
                 <div class="portfolio__col" data-cat='Website' data-modal="#modal__work-1">
                     <div class="work">
-                        <img class="img" src="https://placehold.it/370x300" alt="">
+                        <img class="work__image" src="https://placehold.it/370x300" alt="">
                         <div class="work__content">
                             <div class="work__cat">Website</div>
                             <div class="work__title">
@@ -99,7 +103,7 @@
                 </div>
                 <div class="portfolio__col" data-cat='App' data-modal="#modal__work-2">
                     <div class="work">
-                        <img class="img" src="https://placehold.it/370x300" alt="">
+                        <img class="work__image" src="https://placehold.it/370x300" alt="">
                         <div class="work__content">
                             <div class="work__cat">App</div>
                             <div class="work__title">
@@ -111,7 +115,7 @@
                 </div>
                 <div class="portfolio__col" data-cat='Interaction' data-modal="#modal__work-3">
                     <div class="work">
-                        <img class="img" src="https://placehold.it/370x300" alt="">
+                        <img class="work__image" src="https://placehold.it/370x300" alt="">
                         <div class="work__content">
                             <div class="work__cat">Interaction</div>
                             <div class="work__title">
@@ -123,7 +127,7 @@
                 </div>
                 <div class="portfolio__col" data-cat='Interaction' data-modal="#modal__work-4">
                     <div class="work">
-                        <img class="img" src="https://placehold.it/370x300" alt="">
+                        <img class="work__image" src="https://placehold.it/370x300" alt="">
                         <div class="work__content">
                             <div class="work__cat">Interaction</div>
                             <div class="work__title">
@@ -135,7 +139,7 @@
                 </div>
                 <div class="portfolio__col" data-cat='App' data-modal="#modal__work-5">
                     <div class="work">
-                        <img class="img" src="https://placehold.it/370x300" alt="">
+                        <img class="work__image" src="https://placehold.it/370x300" alt="">
                         <div class="work__content">
                             <div class="work__cat">App</div>
                             <div class="work__title">
@@ -147,43 +151,7 @@
                 </div>
                 <div class="portfolio__col" data-cat='Website' data-modal="#modal__work-6">
                     <div class="work">
-                        <img class="img" src="https://placehold.it/370x300" alt="">
-                        <div class="work__content">
-                            <div class="work__cat">Website</div>
-                            <div class="work__title">
-                                PROJECT TITLE
-                                <time class="work__date" datetime="2020-30-09"> 2020 </time>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio__col hide" data-cat='Website' data-modal="#modal__work-7">
-                    <div class="work">
-                        <img class="img" src="https://placehold.it/370x300" alt="">
-                        <div class="work__content">
-                            <div class="work__cat">Website</div>
-                            <div class="work__title">
-                                PROJECT TITLE
-                                <time class="work__date" datetime="2020-30-09"> 2020 </time>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio__col hide" data-cat='Website' data-modal="#modal__work-8">
-                    <div class="work">
-                        <img class="img" src="https://placehold.it/370x300" alt="">
-                        <div class="work__content">
-                            <div class="work__cat">Website</div>
-                            <div class="work__title">
-                                PROJECT TITLE
-                                <time class="work__date" datetime="2020-30-09"> 2020 </time>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio__col hide" data-cat='Website' data-modal="#modal__work-9">
-                    <div class="work">
-                        <img class="img" src="https://placehold.it/370x300" alt="">
+                        <img class="work__image" src="https://placehold.it/370x300" alt="">
                         <div class="work__content">
                             <div class="work__cat">Website</div>
                             <div class="work__title">
@@ -888,11 +856,13 @@
 
                     <ul class="contact__info">
                         <li class="contact__info-item">
-                            <img class="contact__info-icon" src="images/phone.svg" alt="">
+                            <img class="contact__info-icon" src="images/phone.svg" alt=""
+                                style="width: 15px;height: 15px;">
                             (200) 100 3000
                         </li>
                         <li class="contact__info-item">
-                            <img class="contact__info-icon" src="images/mail.svg" alt="">
+                            <img class="contact__info-icon" src="images/mail.svg" alt=""
+                                style="width: 15px;height: 15px;">
                             designer@ui43.com
                         </li>
                     </ul>

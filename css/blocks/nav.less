@@ -2,6 +2,30 @@
 
 .nav {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+
+    @media @tablet-mini {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 2000;
+
+        background-color: @white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+        text-align: center;
+
+        display: none;
+        
+        &.show {
+        display: flex;
+    }
+
+    }
 }
 
 .nav__link {
@@ -49,5 +73,9 @@
             color: @white;
 
         }
+    }
+    @media @tablet-mini {
+        width: 100%;
+        
     }
 }

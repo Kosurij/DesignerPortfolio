@@ -2,6 +2,7 @@ $(function () {
     $('a').on('click', function (event) {
         event.preventDefault();
     });
+
     // Filter
     let filter = $("[data-filter]");
     filter.on('click', function (event) {
@@ -107,4 +108,14 @@ $(function () {
         }, 700);
     });
 
+    // NavToggle
+
+    let navToggle = $("#navToggle");
+    let nav = $("#nav");
+
+    navToggle.on("click", function (event) {
+        event.preventDefault();
+
+        nav.toggleClass("show");
+    })
 });
