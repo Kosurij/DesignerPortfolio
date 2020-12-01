@@ -1,5 +1,7 @@
 $(function () {
-
+    $('a').on('click', function (event) {
+        event.preventDefault();
+    });
     // Filter
     let filter = $("[data-filter]");
     filter.on('click', function (event) {
