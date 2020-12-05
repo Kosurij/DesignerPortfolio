@@ -95,6 +95,17 @@ $(function () {
         if (last == currentSlider.attr('id')) {
             $("body").removeClass('no-scroll')
         }
+        if ($(".works__wrapper").hasClass('show')) {
+            $(".works__wrapper").removeClass('show');
+            $("body").removeClass('no-scroll')
+        }
+    })
+
+    $('.loader').on("click", function () {
+        $('.portfolio__col').show();
+        $('.works__wrapper').find('.modal').unwrap();
+        let $this = $(this);
+        $this.hide();
     })
 
     // Scroll 

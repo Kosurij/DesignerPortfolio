@@ -21,6 +21,13 @@
     @media @tablet {
         margin: 2.2rem auto;
     }
+    @media @mobile-sm {
+        flex-direction: column;
+
+        &::before {
+            display: none;
+        }
+    }
 }
 
 .timeline__item {
@@ -29,6 +36,10 @@
     &:last-child {
         margin-bottom: 0;
     }
+
+    @media @mobile-sm {
+        margin-bottom: 1rem;
+     }
 }
 
 .timeline__col {
@@ -49,6 +60,12 @@
         @media @mobile {
             padding-left: .5rem;
         }
+    }
+    
+    @media @mobile-sm {
+       width: 100%;
+       text-align: center;
+       margin-bottom: 1rem;
     }
 }
 
