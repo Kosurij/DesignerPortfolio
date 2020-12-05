@@ -3,6 +3,13 @@
 .header {
   padding: 1.2rem 0;
   position: relative;
+  background-color: @white;
+
+  @media @tablet {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
 }
 
 .header__inner {

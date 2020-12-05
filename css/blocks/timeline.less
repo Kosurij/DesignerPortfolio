@@ -18,6 +18,9 @@
         left: 50%;
         z-index: 1;
     }
+    @media @tablet {
+        margin: 2.2rem auto;
+    }
 }
 
 .timeline__item {
@@ -34,10 +37,18 @@
     &--left {
         text-align: right;
         padding-right: 3.2rem;
+
+        @media @mobile {
+            padding-right: 1rem;
+        }
     }
 
     &--right {
         padding-left: 3.2rem;
+
+        @media @mobile {
+            padding-left: .5rem;
+        }
     }
 }
 
@@ -47,6 +58,20 @@
     font-weight: 700;
 
     margin-bottom: 2.6rem;
+
+    @media @tablet-mini {
+     margin-bottom: 1.7rem;       
+    }
+
+    @media @mobile {
+        margin-bottom: 1.3rem;
+    }
+    
+    @media @mobile-sm {
+        &.skills {
+            display: none;
+        }
+    }
 }
 
 .timeline__date {
@@ -64,7 +89,7 @@
 }
 
 .timeline__position {
-    font-weight: 0.94rem;
+    font-size: 0.94rem;
     font-style: italic;
 }
 

@@ -33,8 +33,8 @@ $(function () {
         event.preventDefault();
         let $this = $(this);
         let modalId = $this.data("modal");
-        $(".modal").hide();
-        $(modalId).show();
+        $(".modal").removeClass('show');
+        $(modalId).addClass('show');
         $("body").addClass('no-scroll');
     })
 
@@ -43,18 +43,21 @@ $(function () {
         let $this = $(this);
         let modalParent = $this.parents(".modal");
         console.log(modalParent);
-        modalParent.hide();
+        modalParent.removeClass('show');
         $("body").removeClass('no-scroll');
     })
 
     $(".modal").on("click", function (event) {
-        $(this).hide();
+        $(this).removeClass('show');
         $("body").removeClass('no-scroll');
     })
 
     $(".modal__dialog").on("click", function (event) {
         event.stopPropagation();
     })
+
+    // @media Modals 
+
 
 
     // Slider: 
@@ -75,8 +78,8 @@ $(function () {
         let currentSlider = $(this).parents('.modal');
         let first = $('.modalWorks').find('.modal').first().attr('id');
 
-        currentSlider.hide();
-        currentSlider.prev().show();
+        currentSlider.removeClass('show');
+        currentSlider.prev().addClass('show');
         if (first == currentSlider.attr('id')) {
             $("body").removeClass('no-scroll')
         };
@@ -87,8 +90,8 @@ $(function () {
         let currentSlider = $(this).parents('.modal');
         let last = $('.modalWorks').find('.modal').last().attr('id');
 
-        currentSlider.hide();
-        currentSlider.next().show();
+        currentSlider.removeClass('show');
+        currentSlider.next().addClass("show");
         if (last == currentSlider.attr('id')) {
             $("body").removeClass('no-scroll')
         }
@@ -113,9 +116,22 @@ $(function () {
     let navToggle = $("#navToggle");
     let nav = $("#nav");
 
-    navToggle.on("click", function (event) {
+    navToggle.on("click", event => {
         event.preventDefault();
 
         nav.toggleClass("show");
     })
+
+    // Burger menu
+    let burger = $(".burger");
+    burger.on('click', () => {
+        burger.toggleClass('open');
+    })
+
+    $('a.nav__link').on('click', () => {
+        nav.toggleClass('show');
+        burger.toggleClass('open');
+    })
+
 });
+

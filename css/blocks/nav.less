@@ -22,9 +22,8 @@
         display: none;
         
         &.show {
-        display: flex;
-    }
-
+            display: flex;
+        }
     }
 }
 
@@ -39,7 +38,7 @@
 
     // border-bottom: 3px solid transparent;
 
-    &:after{
+    &:after {
         content: '';
         display: block;
         width: 0;
@@ -57,7 +56,11 @@
         &:after {
             width: 100%;
 
+            @media @tablet {
+                width: 0;
+            }
         }
+
     }
     // Modificators
     &--btn{

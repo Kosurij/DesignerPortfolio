@@ -2,16 +2,36 @@
 
 .contact {
     display: flex;
-
 }
 
 .contact__left {
     width: 47%;
     padding: 2rem;
+
+    @media @mobile {
+        width: 100%;
+    }
+
+    @media @mobile-sm {
+        padding: 1rem;
+    }
 }
 
 .contact__right {
     width: 53%;
+
+    @media @tablet {
+        img {
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+    }
+
+    @media @mobile {
+        display: none;
+    }
 }
 
 .contact__info {
@@ -21,6 +41,10 @@
     font-size: 0.94rem;
     color: @black;
     font-weight: 300;
+
+    @media @mobile-sm {
+        margin: 1rem 0 1.3rem;
+    }
 }
 
 .contact__info-item {

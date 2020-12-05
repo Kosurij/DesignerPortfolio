@@ -26,11 +26,19 @@
     &::placeholder {
         color: @black;
     }
+
+    @media @mobile-sm {
+        padding: 1rem;
+    }
 }
 
 .form__textarea {
     height: 200px;
     resize: none;
+
+    @media @mobile-sm {
+        height: 120px;
+    }
 }
 
 .form__label {

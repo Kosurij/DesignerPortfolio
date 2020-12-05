@@ -1,7 +1,11 @@
 // main:../style.less
 
 .progress-bar {
-    margin-bottom: 2.6rem;;
+    margin-bottom: 2.6rem;
+
+    @media @mobile-sm {
+        display: none;
+    }
 }
 
 .progress-bar__item {
@@ -18,12 +22,28 @@
 
 .progress-bar__right {
     padding-right: 5.66rem;
+    
+    @media @tablet-mini {
+        padding-right: 1.66rem;      
+      } 
+
+    @media @mobile {
+        padding-right: 0;
+    }
 }
 
 .progress-bar__bar {
     width: 139px;
     height: 6px;
     background-color: @gray-light;
+
+    @media @mobile {
+        width: 70px;
+    }
+
+    @media @mobile-sm {
+        display: none;
+    }
 }
 
 .progress-bar__progress {
