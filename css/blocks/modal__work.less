@@ -66,12 +66,16 @@
         font-size: 1.6rem
     }
 
+    @media @tablet-mini {
+        font-size: 1.6rem;
+    }
+
     @media (max-width: 590px) {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
 
     @media @mobile {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 }
 
@@ -165,6 +169,14 @@
     z-index: 1;
 
     padding: 0 1.8rem 1rem;
+
+    @media @tablet-mini {
+        padding: 0 1rem 1rem;
+
+        .modal__work-btn {
+            font-size: .8rem;
+        }
+    }
 
     @media @mobile-sm {
         padding: 0 .3rem 1rem;
